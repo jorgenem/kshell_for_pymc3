@@ -1,0 +1,10 @@
+
+ Energy levels
+
+     N  2J prty N_Jp  2T       E(MeV)     Ex(MeV)   log-file
+
+     1   4  +     1    2    -14.92527     0.00000   log_Li8_j4p.txt 
+     2   2  +     1    2    -14.01710     0.90817   log_Li8_j2p.txt 
+     3   6  +     1    2    -13.29542     1.62985   log_Li8_j6p.txt 
+     4   2  +     2    2    -12.14547     2.77980   log_Li8_j2p.txt 
+     5   2  +     3    2     -9.58859     5.33668   log_Li8_j2p.txt 

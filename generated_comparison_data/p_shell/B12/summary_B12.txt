@@ -1,0 +1,7 @@
+
+ Energy levels
+
+     N  2J prty N_Jp  2T       E(MeV)     Ex(MeV)   log-file
+
+     1   2  +     1    2    -55.96040     0.00000   log_B12_j2p.txt 
+     2   4  +     1    2    -54.35402     1.60638   log_B12_j4p.txt 

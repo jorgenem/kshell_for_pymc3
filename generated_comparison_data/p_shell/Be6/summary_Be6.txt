@@ -1,0 +1,6 @@
+
+ Energy levels
+
+     N  2J prty N_Jp  2T       E(MeV)     Ex(MeV)   log-file
+
+     1   0  +     1    2     -3.90981     0.00000   log_Be6_j0p.txt 

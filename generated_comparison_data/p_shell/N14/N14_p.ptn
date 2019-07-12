@@ -1,0 +1,17 @@
+# particle-hole trucation orbit(s) : min., max.
+# partition file of interaction.snt  Z=5  N=5  parity=+1
+ 5 5 1
+# num. of  proton partition, netron partition
+ 2 2
+# proton partition
+     1     1  4
+     2     2  3
+# neutron partition
+     1     1  4
+     2     2  3
+# partition of proton and neutron
+4
+    1     1
+    1     2
+    2     1
+    2     2

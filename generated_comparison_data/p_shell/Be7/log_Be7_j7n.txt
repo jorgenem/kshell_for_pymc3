@@ -1,0 +1,146 @@
+OpenMP  # of threads=  4
+
+&INPUT
+ FN_INT="interaction.snt                                                                                                                                                                                                                                                 ",
+ FN_PTN="Be7_n.ptn                                                                                                                                                                                                                                                       ",
+ FN_PTN_INIT="NO_INIT                                                                                                                                                                                                                                                         ",
+ MTOT=7          ,
+ HW_TYPE=1          ,
+ N_EIGEN=2          ,
+ N_RESTART_VEC=4          ,
+ MAX_LANC_VEC=204        ,
+ MAXITER=300        ,
+ IS_DOUBLE_J=T,
+ FN_SAVE_WAVE="Be7_j7n.wav                                                                                                                                                                                                                                                     ",
+ FN_LOAD_WAVE="NO_INIT                                                                                                                                                                                                                                                         ",
+ IS_LOAD_SNAPSHOT=F,
+ BETA_CM=  0.0000000000000000     ,
+ EFF_CHARGE=  1.5000000000000000     , 0.50000000000000000     ,
+ GL=  1.0000000000000000     ,  0.0000000000000000     ,
+ GS=  5.0270999999999999     , -3.4434999999999998     ,
+ E1_CHARGE= 2*0.0000000000000000       ,
+ OP_TYPE_INIT="NO_INIT                                                                                                                                                                                                                                                         ",
+ MASS=0          ,
+ MODE_LV_HDD=1          ,
+ IS_CALC_TBME=F,
+ TOL=  9.9999999999999995E-008,
+ /
+compile conf. kwf, kdim, kmbit =  8  8  8
+
+ model space
+   k,  n,  l,  j, tz,  p, 2n+l
+   1   0   1   1  -1  -1   1   p 0p_1/2
+   2   0   1   3  -1  -1   1   p 0p_3/2
+   3   0   1   1   1  -1   1   n 0p_1/2
+   4   0   1   3   1  -1   1   n 0p_3/2
+
+set partition Mtotal=  7  partition_file= Be7_n.ptn
+
+pn= 1   # of mbits=             15
+pn= 2   # of mbits=              6
+
+init_partition  time it took was:     0.032 sec
+
+Memory usage in partition    0.00MB
+N. of valence protons and neutrons =   2  1   mass=  7   n,z-core   2  2
+ hbar_omega: set by 41A^(-1/3) MeV
+hbar_omega =   21.43308 MeV;     b =    1.39101 fm
+ partition distribution based on counted dim.           1
+ partition distribution based on counted dim.           1
+
+loadbalancing cost max/min           2.00000           2.00000
+
+ partition distribution algorithm time:   1.3828277587890625E-005
+
+total # of partitions                  2  = 10** 0.30
+total m-scheme dimension               2  = 10** 0.30
+ max. # dim. / a partition                    1
+ max local dim. / proc, average                    2                    2
+
+Memory for one global Lanczos vector:     0.000 GB
+Memory / process is:     0.000 GB x     12 =      0.000 GB
+Total Memory for Lanczos vectors:     0.000 GB
+
+
+max. working area for pn-int.:      0.358GB        4000000
+split partition threshold dim.            100  nsplt_ptn   2
+ # of split partitions        0 /            2
+init_bp_operator time it took was:     0.000 sec
+
+ max/min # of connected ptns / proc           4           4
+
+ *** Lanczos start ***
+
+          JJ bn converged    1  0.34E-29
+time diag     0.000 sec
+time re-orth     0.000 sec
+time / thread at rank 0    0     0.00000
+time / thread at rank 0    1     0.00000
+time / thread at rank 0    2     0.00000
+time / thread at rank 0    3     0.00000
+max time / a partition    0   0.00000
+ JJ   operate_time      0.000
+          JJ bn converged    1  0.00E+00
+H  lanczos     1    1      -8.253851 1000000.000000
+time / thread at rank 0    0     0.00000
+time / thread at rank 0    1     0.00000
+time / thread at rank 0    2     0.00000
+time / thread at rank 0    3     0.00000
+max time / a partition    0   0.00000
+ H    operate_time      0.002
+H bn converged    2  0.15E-29
+ time restart   4.3296813964843750E-004
+time dump_snapshot I/O:    0.00003 tmp_snapshot_Be7_n.ptn_7_(myrank)     0.00GB/s x     1
+
+lanczos eigenvalues     1   -9.523645
+lanczos eigenvalues     2   -4.193055
+total time it took was:     0.054 sec.      0.000 hours
+
+ effective charges   1.500  0.500
+-------------------------------------------------
+   1  <H>:    -9.52365  <JJ>:    15.75000  J:  7/2  prty -1
+                        <TT>:     0.75000  T:  1/2
+ <p Nj>  0.402  1.598
+ <n Nj>  0.000  1.000
+   <Qp>    -3.461   <Qn>    -1.935   <eQ>    -6.159
+   <Lp>     1.930   <Ln>     1.000
+   <sp>     0.070   <sn>     0.500
+   <gm>     0.562   <Jz>     3.500
+-------------------------------------------------
+   2  <H>:    -4.19305  <JJ>:    15.75000  J:  7/2  prty -1
+                        <TT>:     0.75000  T:  1/2
+ <p Nj>  0.598  1.402
+ <n Nj>  0.000  1.000
+   <Qp>     1.526   <Qn>    -1.935   <eQ>     1.321
+   <Lp>     1.070   <Ln>     1.000
+   <sp>     0.930   <sn>     0.500
+   <gm>     4.022   <Jz>     3.500
+-------------------------------------------------
+
+Memory usage in partition    0.00MB
+total # of partitions                  2  = 10** 0.30
+total m-scheme dimension               2  = 10** 0.30
+ max. # dim. / a partition                    1
+ max local dim. / proc, average                    2                    2
+
+wave functions save in Be7_j7n.wav # of wf    2
+time I/O      0.000 GB  /      0.000 sec. =      0.00 GB/s
+
+ maximum num of allocated lanczos vec.           3
+ present num of allocated lanczos vec.           2
+
+    summary of time, total =     0:00:00
+
+                       time,    ncall, time/ncall,   ratio 
+          total       0.058         1     0.05834   1.0000
+    pre-process       0.034         1     0.03366   0.5770
+        operate       0.005        10     0.00047   0.0805
+     re-orthog.       0.010         4     0.00254   0.1741
+  thick-restart       0.001         3     0.00044   0.0227
+   diag tri-mat       0.000         4     0.00002   0.0011
+  dump snapshot       0.000         1     0.00003   0.0006
+           misc       0.008                         0.1452
+
+   I/O LV read        0.000        18     0.00001   0.0043
+   I/O LV write       0.000        12     0.00003   0.0072
+

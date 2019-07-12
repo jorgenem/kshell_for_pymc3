@@ -1,0 +1,1 @@
+This folder contains calculation files done using a known interaction, which can be used as synthetic "experimental" data to benchmark the performance of the optimization and inference methods.

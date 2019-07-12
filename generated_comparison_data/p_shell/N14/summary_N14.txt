@@ -1,0 +1,8 @@
+
+ Energy levels
+
+     N  2J prty N_Jp  2T       E(MeV)     Ex(MeV)   log-file
+
+     1   2  +     1    0    -85.92792     0.00000   log_N14_j2p.txt 
+     2   0  +     1    2    -83.23827     2.68965   log_N14_j0p.txt 
+     3   2  +     2    0    -82.31126     3.61666   log_N14_j2p.txt 

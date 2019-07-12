@@ -1,0 +1,173 @@
+OpenMP  # of threads=  4
+
+&INPUT
+ FN_INT="interaction.snt                                                                                                                                                                                                                                                 ",
+ FN_PTN="Li8_p.ptn                                                                                                                                                                                                                                                       ",
+ FN_PTN_INIT="NO_INIT                                                                                                                                                                                                                                                         ",
+ MTOT=2          ,
+ HW_TYPE=1          ,
+ N_EIGEN=3          ,
+ N_RESTART_VEC=4          ,
+ MAX_LANC_VEC=204        ,
+ MAXITER=300        ,
+ IS_DOUBLE_J=T,
+ FN_SAVE_WAVE="Li8_j2p.wav                                                                                                                                                                                                                                                     ",
+ FN_LOAD_WAVE="NO_INIT                                                                                                                                                                                                                                                         ",
+ IS_LOAD_SNAPSHOT=F,
+ BETA_CM=  0.0000000000000000     ,
+ EFF_CHARGE=  1.5000000000000000     , 0.50000000000000000     ,
+ GL=  1.0000000000000000     ,  0.0000000000000000     ,
+ GS=  5.0270999999999999     , -3.4434999999999998     ,
+ E1_CHARGE= 2*0.0000000000000000       ,
+ OP_TYPE_INIT="NO_INIT                                                                                                                                                                                                                                                         ",
+ MASS=0          ,
+ MODE_LV_HDD=1          ,
+ IS_CALC_TBME=F,
+ TOL=  9.9999999999999995E-008,
+ /
+compile conf. kwf, kdim, kmbit =  8  8  8
+
+ model space
+   k,  n,  l,  j, tz,  p, 2n+l
+   1   0   1   1  -1  -1   1   p 0p_1/2
+   2   0   1   3  -1  -1   1   p 0p_3/2
+   3   0   1   1   1  -1   1   n 0p_1/2
+   4   0   1   3   1  -1   1   n 0p_3/2
+
+set partition Mtotal=  2  partition_file= Li8_p.ptn
+
+pn= 1   # of mbits=              6
+pn= 2   # of mbits=             20
+
+init_partition  time it took was:     0.006 sec
+
+Memory usage in partition    0.00MB
+N. of valence protons and neutrons =   1  3   mass=  8   n,z-core   2  2
+ hbar_omega: set by 41A^(-1/3) MeV
+hbar_omega =   20.50000 MeV;     b =    1.42231 fm
+ partition distribution based on counted dim.           1
+ partition distribution based on counted dim.           1
+
+loadbalancing cost max/min          24.00000          24.00000
+
+ partition distribution algorithm time:   1.5974044799804688E-005
+
+total # of partitions                 16  = 10** 1.20
+total m-scheme dimension              24  = 10** 1.38
+ max. # dim. / a partition                    3
+ max local dim. / proc, average                   24                   24
+
+Memory for one global Lanczos vector:     0.000 GB
+Memory / process is:     0.000 GB x     13 =      0.000 GB
+Total Memory for Lanczos vectors:     0.000 GB
+
+
+max. working area for pn-int.:      0.358GB        4000000
+split partition threshold dim.            100  nsplt_ptn   2
+ # of split partitions        0 /           16
+init_bp_operator time it took was:     0.000 sec
+
+ max/min # of connected ptns / proc         216         216
+
+ *** Lanczos start ***
+
+          JJ  lanczos     1    1       7.562700
+time / thread at rank 0    0     0.00001
+time / thread at rank 0    1     0.00001
+time / thread at rank 0    2     0.00001
+time / thread at rank 0    3     0.00001
+max time / a partition    0   0.00001
+ JJ   operate_time      0.000
+          JJ  lanczos     2    2       4.358277
+          JJ  lanczos     3    3       2.871901
+          JJ bn converged    4  0.80E-29
+time diag     0.000 sec
+time re-orth     0.000 sec
+          JJ bn converged    1  0.31E-28
+H  lanczos     1    1       0.995501 1000000.000000 1000000.000000
+time / thread at rank 0    0     0.00005
+time / thread at rank 0    1     0.00007
+time / thread at rank 0    2     0.00005
+time / thread at rank 0    3     0.00012
+max time / a partition    0   0.00011
+ H    operate_time      0.000
+          JJ bn converged    1  0.31E-28
+H  lanczos     2    2      -6.607740       2.439943 1000000.000000
+          JJ bn converged    1  0.11E-27
+H  lanczos     3    3      -9.248680      -0.570446       3.292153
+          JJ bn converged    1  0.20E-27
+H  lanczos     4    4     -10.281897      -5.398561       0.946471
+          JJ bn converged    1  0.39E-27
+H  lanczos     5    5     -12.221940      -8.790884      -2.428215
+          JJ bn converged    1  0.23E-26
+H  lanczos     6    6     -13.113175      -9.656717      -7.018083
+          JJ bn converged    1  0.33E-26
+H  lanczos     7    7     -13.473680     -10.292222      -8.037610
+          JJ bn converged    1  0.82E-24
+H  lanczos     8    8     -14.011308     -12.132160      -9.582343
+H bn converged    9  0.21E-23
+ time restart   4.3106079101562500E-004
+time dump_snapshot I/O:    0.00002 tmp_snapshot_Li8_p.ptn_2_(myrank)     0.01GB/s x     1
+
+lanczos eigenvalues     1  -14.017096
+lanczos eigenvalues     2  -12.145474
+lanczos eigenvalues     3   -9.588587
+total time it took was:     0.012 sec.      0.000 hours
+
+ effective charges   1.500  0.500
+-------------------------------------------------
+   1  <H>:   -14.01710  <JJ>:     2.00000  J:  2/2  prty  1
+                        <TT>:     2.00000  T:  2/2
+ <p Nj>  0.195  0.805
+ <n Nj>  0.978  2.022
+   <Qp>    -0.437   <Qn>    -1.075   <eQ>    -1.194
+   <Lp>     0.345   <Ln>     0.134
+   <sp>     0.192   <sn>     0.330
+   <gm>     0.173   <Jz>     1.000
+-------------------------------------------------
+   2  <H>:   -12.14547  <JJ>:     2.00000  J:  2/2  prty  1
+                        <TT>:     2.00000  T:  2/2
+ <p Nj>  0.272  0.728
+ <n Nj>  0.723  2.277
+   <Qp>     0.396   <Qn>     1.633   <eQ>     1.411
+   <Lp>     0.302   <Ln>     0.764
+   <sp>     0.002   <sn>    -0.068
+   <gm>     0.550   <Jz>     1.000
+-------------------------------------------------
+   3  <H>:    -9.58859  <JJ>:     2.00000  J:  2/2  prty  1
+                        <TT>:     2.00000  T:  2/2
+ <p Nj>  0.737  0.263
+ <n Nj>  0.997  2.003
+   <Qp>    -0.264   <Qn>    -0.068   <eQ>    -0.430
+   <Lp>     0.465   <Ln>     0.893
+   <sp>    -0.141   <sn>    -0.217
+   <gm>     0.503   <Jz>     1.000
+-------------------------------------------------
+
+Memory usage in partition    0.00MB
+total # of partitions                 16  = 10** 1.20
+total m-scheme dimension              24  = 10** 1.38
+ max. # dim. / a partition                    3
+ max local dim. / proc, average                   24                   24
+
+wave functions save in Li8_j2p.wav # of wf    3
+time I/O      0.000 GB  /      0.000 sec. =      0.07 GB/s
+
+ maximum num of allocated lanczos vec.           4
+ present num of allocated lanczos vec.           3
+
+    summary of time, total =     0:00:00
+
+                       time,    ncall, time/ncall,   ratio 
+          total       0.013         1     0.01266   1.0000
+    pre-process       0.007         1     0.00697   0.5506
+        operate       0.001        30     0.00003   0.0703
+     re-orthog.       0.001        21     0.00003   0.0536
+  thick-restart       0.001        10     0.00015   0.1153
+   diag tri-mat       0.000        21     0.00001   0.0116
+  dump snapshot       0.000         1     0.00002   0.0017
+           misc       0.003                         0.2085
+
+   I/O LV read        0.001       124     0.00001   0.0773
+   I/O LV write       0.001        44     0.00002   0.0723
+

@@ -1,0 +1,164 @@
+OpenMP  # of threads=  4
+
+&INPUT
+ FN_INT="interaction.snt                                                                                                                                                                                                                                                 ",
+ FN_PTN="Be9_n.ptn                                                                                                                                                                                                                                                       ",
+ FN_PTN_INIT="NO_INIT                                                                                                                                                                                                                                                         ",
+ MTOT=3          ,
+ HW_TYPE=1          ,
+ N_EIGEN=1          ,
+ N_RESTART_VEC=1          ,
+ MAX_LANC_VEC=201        ,
+ MAXITER=300        ,
+ IS_DOUBLE_J=T,
+ FN_SAVE_WAVE="Be9_j3n.wav                                                                                                                                                                                                                                                     ",
+ FN_LOAD_WAVE="NO_INIT                                                                                                                                                                                                                                                         ",
+ IS_LOAD_SNAPSHOT=F,
+ BETA_CM=  0.0000000000000000     ,
+ EFF_CHARGE=  1.5000000000000000     , 0.50000000000000000     ,
+ GL=  1.0000000000000000     ,  0.0000000000000000     ,
+ GS=  5.0270999999999999     , -3.4434999999999998     ,
+ E1_CHARGE= 2*0.0000000000000000       ,
+ OP_TYPE_INIT="NO_INIT                                                                                                                                                                                                                                                         ",
+ MASS=0          ,
+ MODE_LV_HDD=1          ,
+ IS_CALC_TBME=F,
+ TOL=  9.9999999999999995E-008,
+ /
+compile conf. kwf, kdim, kmbit =  8  8  8
+
+ model space
+   k,  n,  l,  j, tz,  p, 2n+l
+   1   0   1   1  -1  -1   1   p 0p_1/2
+   2   0   1   3  -1  -1   1   p 0p_3/2
+   3   0   1   1   1  -1   1   n 0p_1/2
+   4   0   1   3   1  -1   1   n 0p_3/2
+
+set partition Mtotal=  3  partition_file= Be9_n.ptn
+
+pn= 1   # of mbits=             15
+pn= 2   # of mbits=             20
+
+init_partition  time it took was:     0.002 sec
+
+Memory usage in partition    0.00MB
+N. of valence protons and neutrons =   2  3   mass=  9   n,z-core   2  2
+ hbar_omega: set by 41A^(-1/3) MeV
+hbar_omega =   19.71074 MeV;     b =    1.45051 fm
+ partition distribution based on counted dim.           1
+ partition distribution based on counted dim.           1
+
+loadbalancing cost max/min          48.00000          48.00000
+
+ partition distribution algorithm time:   1.5974044799804688E-005
+
+total # of partitions                 23  = 10** 1.36
+total m-scheme dimension              48  = 10** 1.68
+ max. # dim. / a partition                    6
+ max local dim. / proc, average                   48                   48
+
+Memory for one global Lanczos vector:     0.000 GB
+Memory / process is:     0.000 GB x     12 =      0.000 GB
+Total Memory for Lanczos vectors:     0.000 GB
+
+
+max. working area for pn-int.:      0.358GB        4000000
+split partition threshold dim.            100  nsplt_ptn   2
+ # of split partitions        0 /           23
+init_bp_operator time it took was:     0.000 sec
+
+ max/min # of connected ptns / proc         395         395
+
+ *** Lanczos start ***
+
+          JJ  lanczos     1    1      10.438927
+time / thread at rank 0    0     0.00003
+time / thread at rank 0    1     0.00003
+time / thread at rank 0    2     0.00003
+time / thread at rank 0    3     0.00003
+max time / a partition    0   0.00001
+ JJ   operate_time      0.000
+          JJ  lanczos     2    2       5.615436
+          JJ  lanczos     3    3       4.420418
+          JJ bn converged    4  0.86E-28
+time diag     0.000 sec
+time re-orth     0.000 sec
+          JJ bn converged    1  0.52E-28
+H  lanczos     1    1     -13.470044
+time / thread at rank 0    0     0.00009
+time / thread at rank 0    1     0.00008
+time / thread at rank 0    2     0.00009
+time / thread at rank 0    3     0.00008
+max time / a partition    0   0.00003
+ H    operate_time      0.000
+          JJ bn converged    1  0.50E-28
+H  lanczos     2    2     -19.950814
+          JJ bn converged    1  0.84E-28
+H  lanczos     3    3     -21.717736
+          JJ bn converged    1  0.64E-28
+H  lanczos     4    4     -22.606601
+          JJ bn converged    1  0.46E-28
+H  lanczos     5    5     -26.468151
+          JJ bn converged    1  0.32E-27
+H  lanczos     6    6     -31.761093
+          JJ bn converged    1  0.19E-26
+H  lanczos     7    7     -32.510504
+          JJ bn converged    1  0.44E-26
+H  lanczos     8    8     -32.569347
+          JJ bn converged    1  0.39E-26
+H  lanczos     9    9     -32.579654
+          JJ bn converged    1  0.14E-26
+H  lanczos    10   10     -32.585138
+          JJ bn converged    1  0.53E-25
+H  lanczos    11   11     -32.585985
+          JJ bn converged    1  0.43E-24
+H  lanczos    12   12     -32.586019
+          JJ bn converged    1  0.67E-23
+H  lanczos    13   13     -32.586020
+          JJ bn converged    1  0.67E-22
+H converged  0.287739E-07
+ time restart   2.8014183044433594E-004
+time dump_snapshot I/O:    0.00002 tmp_snapshot_Be9_n.ptn_3_(myrank)     0.00GB/s x     1
+
+lanczos eigenvalues     1  -32.586020
+total time it took was:     0.012 sec.      0.000 hours
+
+ effective charges   1.500  0.500
+-------------------------------------------------
+   1  <H>:   -32.58602  <JJ>:     3.75000  J:  3/2  prty -1
+                        <TT>:     0.75000  T:  1/2
+ <p Nj>  0.375  1.625
+ <n Nj>  0.429  2.571
+   <Qp>     2.023   <Qn>     1.310   <eQ>     3.689
+   <Lp>     0.253   <Ln>     0.841
+   <sp>     0.006   <sn>     0.400
+   <gm>    -1.095   <Jz>     1.500
+-------------------------------------------------
+
+Memory usage in partition    0.00MB
+total # of partitions                 23  = 10** 1.36
+total m-scheme dimension              48  = 10** 1.68
+ max. # dim. / a partition                    6
+ max local dim. / proc, average                   48                   48
+
+wave functions save in Be9_j3n.wav # of wf    1
+time I/O      0.000 GB  /      0.000 sec. =      0.05 GB/s
+
+ maximum num of allocated lanczos vec.           2
+ present num of allocated lanczos vec.           1
+
+    summary of time, total =     0:00:00
+
+                       time,    ncall, time/ncall,   ratio 
+          total       0.012         1     0.01235   1.0000
+    pre-process       0.003         1     0.00317   0.2569
+        operate       0.002        35     0.00005   0.1503
+     re-orthog.       0.002        32     0.00005   0.1308
+  thick-restart       0.002        16     0.00013   0.1687
+   diag tri-mat       0.000        32     0.00001   0.0144
+  dump snapshot       0.000         1     0.00002   0.0019
+           misc       0.004                         0.2914
+
+   I/O LV read        0.002       193     0.00001   0.1466
+   I/O LV write       0.001        65     0.00002   0.1133
+

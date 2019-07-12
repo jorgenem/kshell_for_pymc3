@@ -1,0 +1,8 @@
+
+ Energy levels
+
+     N  2J prty N_Jp  2T       E(MeV)     Ex(MeV)   log-file
+
+     1   3  -     1    1    -32.58602     0.00000   log_Be9_j3n.txt 
+     2   1  -     1    1    -30.79538     1.79064   log_Be9_j1n.txt 
+     3   5  -     1    1    -29.64422     2.94180   log_Be9_j5n.txt 
